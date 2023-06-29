@@ -93,7 +93,6 @@
       navigator.clipboard.writeText(name)
         .then(() => {
           console.log('Copied to clipboard:', name);
-          // Optionally show a success message or perform other actions
         })
         .catch(error => {
           console.error('Failed to copy to clipboard:', error);

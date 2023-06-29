@@ -2,15 +2,24 @@
   <div class="home">
     <h3>menu</h3>
     <div class="nav-container">
-      <li class="nav-item">
-        <router-link class="nav-link" to="/pokemon">Pokemons</router-link>
-      </li>
-      <li class="nav-item">
-        <router-link class="nav-link" to="/register">Register</router-link>
-      </li>
-      <li class="nav-item">
-        <router-link class="nav-link" to="/login">Login</router-link>
-      </li>
+      <ul>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/pokemon">Pokemons</router-link>
+        </li>
+      </ul>
+      <ul>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/register">Register</router-link>
+        </li>
+      </ul>
+      <ul>
+
+        <li class="nav-item">
+          <router-link class="nav-link" to="/login">Login</router-link>
+        </li>
+      </ul>
+
+
     </div>
   </div>
 </template>
