@@ -3,7 +3,8 @@
     <div class="weather-section">
       <h3>Current weather data:</h3>
       <div class="weather-data" v-if="weatherData !== null">
-        <h1>{{ weatherData.zip }}</h1>
+        <!-- <h1>{{ weatherData.zip }}</h1> -->
+        <h1>{{ weatherData.name }}</h1>
         <img :src="getWeatherIconUrl(weatherData.weather[0].icon)" :alt="weatherData.weather[0].description"
           class="weather-image">
         <p>{{ convertToCelsius(weatherData.main.temp) }} °C</p>
