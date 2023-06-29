@@ -16,11 +16,8 @@
         </table>
         <div class="button-container">
           <button @click="getPokemons" class="btn-get-pokemon">Get Pokemons</button>
-          <!-- Add a button to go back after clicking the Next Offset button and style it -->
-          <div>
-            <button @click="getBackOffset" v-if="nextOffset" class="btn-get-pokemon">Back Offset</button>
-            <button @click="getNextOffset" v-if="nextOffset" class="btn-get-pokemon">Next Offset</button>
-          </div>
+          <button @click="getBackOffset" v-if="nextOffset" class="btn-get-pokemon">Back Offset</button>
+          <button @click="getNextOffset" v-if="nextOffset" class="btn-get-pokemon">Next Offset</button>
         </div>
       </div>
   
@@ -33,7 +30,7 @@
       </form>
   
       <div class="pokemon-data" v-if="pokemonData">
-        <h2>{{ pokemonData.name }}</h2>
+        <h1>{{ pokemonData.name }}</h1>
         <img :src="pokemonData.sprites.front_default" alt="Pokemon Sprite" class="pokemon-image">
       </div>
     </div>
@@ -140,6 +137,7 @@
     margin-top: 1rem;
   }
   
+  
   .btn-get-pokemon:hover {
     background-color: #0056b3;
   }
@@ -181,13 +179,18 @@
   }
   
   .pokemon-image {
-    max-width: 200px;
+    max-width: 600px;
     margin-top: 1rem;
   }
   
   .button-container {
-    display: flex;
-    justify-content: flex-end;
+    /* display: flex;
+    justify-content: flex-end; */
+    text-align: left;
+    
   }
+  .button-container .btn-get-pokemon {
+  margin-right: 0.5rem;
+}
   </style>
   
