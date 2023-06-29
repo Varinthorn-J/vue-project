@@ -48,8 +48,8 @@
         },
         pokemonData: null,
         pokemonList: null,
-        offset: 5,
-        limit: 5,
+        offset: 6,
+        limit: 6,
         nextOffset: 0,
       };
     },

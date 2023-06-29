@@ -18,6 +18,12 @@
           <router-link class="nav-link" to="/login">Login</router-link>
         </li>
       </ul>
+      <ul>
+
+<li class="nav-item">
+  <router-link class="nav-link" to="/weather ">Weather</router-link>
+</li>
+</ul>
 
 
     </div>

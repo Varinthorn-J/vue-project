@@ -4,6 +4,7 @@ import HomePage from '../components/HomePage.vue'
 import RegisterPage from '../components/RegisterPage.vue'
 import LoginPage from '../components/LoginPage.vue'
 import PokemonDisplay from '../components/PokemonDisplay.vue'
+import OpenWeatherMap from '../components/OpenWeatherMap.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/pokemon',
     name: 'pokemon',
     component: PokemonDisplay
+  },
+  {
+    path: '/weather ',
+    name: 'weather ',
+    component: OpenWeatherMap
   }
 ]
 
