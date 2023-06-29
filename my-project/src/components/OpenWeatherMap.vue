@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="weather-section">
-      <h3>Current weather data:</h3>
+      <h3>Current weather data</h3>
       <div class="weather-data" v-if="weatherData !== null">
         <!-- <h1>{{ weatherData.zip }}</h1> -->
         <h1>{{ weatherData.name }}</h1>
