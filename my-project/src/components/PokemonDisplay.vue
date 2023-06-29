@@ -204,7 +204,7 @@
   margin-right: 0.5rem;
 }
 .btn-copy {
-    background-color: #151616;;
+    background-color: #151616;
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;
