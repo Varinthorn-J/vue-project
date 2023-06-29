@@ -11,6 +11,7 @@
           <tbody>
             <tr v-for="pokemon in displayedPokemonList" :key="pokemon.name" class="pokemon-item">
               <td>{{ pokemon.name }}</td>
+              <button @click="copyPokemonName(pokemon.name)" class="btn-copy">Copy</button>
             </tr>
           </tbody>
         </table>
@@ -88,6 +89,16 @@
         this.offset -= this.limit;
         this.getPokemons();
       },
+      copyPokemonName(name) {
+      navigator.clipboard.writeText(name)
+        .then(() => {
+          console.log('Copied to clipboard:', name);
+          // Optionally show a success message or perform other actions
+        })
+        .catch(error => {
+          console.error('Failed to copy to clipboard:', error);
+        });
+    },
     },
   };
   </script>
@@ -119,7 +130,7 @@
   
   .table th {
     font-weight: bold;
-    background-color: #007bff;
+    background-color: #151616;
     color: #fff;
     text-align: left;
   }
@@ -129,7 +140,7 @@
   }
   
   .btn-get-pokemon {
-    background-color: #007bff;
+    background-color: #151616;
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;
@@ -192,5 +203,17 @@
   .button-container .btn-get-pokemon {
   margin-right: 0.5rem;
 }
+.btn-copy {
+    background-color: #151616;;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+  }
+
+  .btn-copy:hover {
+    background-color: #3b3b3b;
+  }
   </style>
   
