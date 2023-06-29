@@ -16,7 +16,7 @@
     <form @submit.prevent="submitForm" class="weather-form">
       <div class="form-group">
         <label for="zip">zip code thailand</label>
-        <input type="text" id="zip" v-model="form.zip" required class="form-input">
+        <input type="text" id="zip" v-model="form.zip" required class="form-input" placeholder="Enter zip code">
       </div>
       <button type="submit" class="btn-submit">Submit</button>
     </form>

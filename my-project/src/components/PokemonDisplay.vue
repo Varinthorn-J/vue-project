@@ -25,7 +25,7 @@
       <form @submit.prevent="submitForm" class="pokemon-form">
         <div class="form-group">
           <label for="name">Pokémon Name:</label>
-          <input type="text" id="name" v-model="form.name" required class="form-input">
+          <input type="text" id="name" v-model="form.name" required class="form-input" placeholder="Enter Pokemon Name">
         </div>
         <button type="submit" class="btn-submit">Submit</button>
       </form>
