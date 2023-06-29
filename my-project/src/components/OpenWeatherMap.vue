@@ -2,17 +2,21 @@
   <div class="container">
     <div class="weather-section">
       <h3>Current weather data:</h3>
-      <div class="weather-data" v-if="weatherData">
-        <h1>{{ weatherData.name }}</h1>
-        <img :src="getWeatherIconUrl(weatherData.weather[0].icon)" :alt="weatherData.weather[0].description" class="weather-image">
+      <div class="weather-data" v-if="weatherData !== null">
+        <h1>{{ weatherData.zip }}</h1>
+        <img :src="getWeatherIconUrl(weatherData.weather[0].icon)" :alt="weatherData.weather[0].description"
+          class="weather-image">
         <p>{{ convertToCelsius(weatherData.main.temp) }} °C</p>
         <p>{{ weatherData.weather[0].description }}</p>
+      </div>
+      <div class="weather-data-error" v-else>
+        <p>{{ weatherDataError }}</p>
       </div>
     </div>
     <form @submit.prevent="submitForm" class="weather-form">
       <div class="form-group">
-        <label for="name">zip code thailand</label>
-        <input type="text" id="name" v-model="form.name" required class="form-input">
+        <label for="zip">zip code thailand</label>
+        <input type="text" id="zip" v-model="form.zip" required class="form-input">
       </div>
       <button type="submit" class="btn-submit">Submit</button>
     </form>
@@ -26,14 +30,15 @@ export default {
   data() {
     return {
       form: {
-        name: '',
+        zip: '',
       },
       weatherData: null,
+      weatherDataError: '',
     };
   },
   methods: {
     submitForm() {
-      const zip = this.form.name;
+      const zip = this.form.zip;
       const apiKey = '833ee0a65be05fe4d5475435c4869744';
       const apiUrl = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},th&appid=${apiKey}`;
 
@@ -43,6 +48,7 @@ export default {
         })
         .catch(error => {
           console.error(error);
+          this.weatherDataError = 'city not found';
         });
     },
     getWeatherIconUrl(iconCode) {
@@ -73,6 +79,11 @@ export default {
 .weather-image {
   max-width: 600px;
   margin-top: 1rem;
+}
+
+.weather-data-error {
+  text-align: center;
+  color: rgb(0, 0, 0);
 }
 
 .weather-form {
