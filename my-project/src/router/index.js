@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import HomePage from '../components/HomePage.vue'
 import RegisterPage from '../components/RegisterPage.vue'
 import LoginPage from '../components/LoginPage.vue'
+import PokemonDisplay from '../components/PokemonDisplay.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: LoginPage
+  },
+  {
+    path: '/pokemon',
+    name: 'pokemon',
+    component: PokemonDisplay
   }
 ]
 
