@@ -1,37 +1,35 @@
-const express = require('express')
-const bodyParser = require('body-parser')
+// Import dependencies
+const express = require('express');
+const bodyParser = require('body-parser');
 
-const app = express()
-const port = 3000
+// Create an instance of Express
+const app = express();
 
-// ใช้ body-parser เพื่อแปลงข้อมูลใน request body เป็น JSON
-app.use(bodyParser.json())
+// Use body-parser middleware to parse request bodies
+app.use(bodyParser.json());
 
-// สร้าง endpoint สำหรับการลงทะเบียน
-app.post('/register', (req, res) => {
-  const { name, email, password, address, phone } = req.body
-  
-  // ตรวจสอบความถูกต้องของข้อมูล
-  
-  // บันทึกข้อมูลลงฐานข้อมูล
-  
-  // ส่ง response กลับไปยัง client
-  res.send('Register success')
-})
+// Define your API routes and handlers
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
 
-// สร้าง endpoint สำหรับการเข้าสู่ระบบ
-app.post('/login', (req, res) => {
-  const { email, password } = req.body
-  
-  // ตรวจสอบความถูกต้องของข้อมูล
-  
-  // สร้าง token สำหรับการยืนยันตัวตน
-  
-  // ส่ง response กลับไปยัง client พร้อม token
-  res.send({ token: 'TOKEN_HERE' })
-})
+app.get('/api/users', (req, res) => {
+  const users = [
+    { id: 1, name: 'John' },
+    { id: 2, name: 'Jane' },
+    { id: 3, name: 'Bob' },
+  ];
+  res.json(users);
+});
 
-// เริ่มต้นเซิร์ฟเวอร์
+app.post('/api/users', (req, res) => {
+  const { name, email } = req.body;
+  // Save user to database or perform other actions
+  res.json({ message: 'User created', name, email });
+});
+
+// Start the server
+const port = 3000;
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`)
-})
+  console.log(`Server running on port ${port}`);
+});
